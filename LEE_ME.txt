@@ -1,0 +1,7 @@
+Instalar https://www.autohotkey.com/
+
+En el archivo ips.txt poner las IPs y switches; no importa el orden, pero sí el formato, que es el siguiente:
+[número de PC o switch] [IP]/[máscara]
+Ejemplo:
+SW1 121.57.240.10/19
+Para que funcionen los comandos, una vez ejecutado el código de Python, hacer doble clic sobre el archivo generado script.ahk y desactivar el antivirus por si acaso.

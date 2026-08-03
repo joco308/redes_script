@@ -1,0 +1,80 @@
+SW1
+enable
+configure terminal
+interface vlan1
+ip address 150.59.80.10 255.255.240.0
+no shutdown
+exit
+ip default-gateway 150.59.80.1
+do wr
+
+SW2
+enable
+configure terminal
+interface vlan1
+ip address 150.59.85.10 255.255.240.0
+no shutdown
+exit
+ip default-gateway 150.59.80.1
+do wr
+
+SW3
+enable
+configure terminal
+interface vlan1
+ip address 150.59.90.10 255.255.240.0
+no shutdown
+exit
+ip default-gateway 150.59.80.1
+do wr
+
+SW4
+enable
+configure terminal
+interface vlan1
+ip address 70.59.10.10 255.255.224.0
+no shutdown
+exit
+ip default-gateway 70.59.0.1
+do wr
+
+SW5
+enable
+configure terminal
+interface vlan1
+ip address 60.59.50.10 255.255.192.0
+no shutdown
+exit
+ip default-gateway 60.59.0.1
+do wr
+
+SW6
+enable
+configure terminal
+interface vlan1
+ip address 160.59.120.10 255.255.128.0
+no shutdown
+exit
+ip default-gateway 160.59.0.1
+do wr
+
+SW7
+enable
+configure terminal
+interface vlan1
+ip address 160.59.90.10 255.255.128.0
+no shutdown
+exit
+ip default-gateway 160.59.0.1
+do wr
+
+SW8
+enable
+configure terminal
+interface vlan1
+ip address 160.59.30.10 255.255.128.0
+no shutdown
+exit
+ip default-gateway 160.59.0.1
+do wr
+
