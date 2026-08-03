@@ -36,7 +36,16 @@ def segmentos(block: list):
         ips_Segmento(vlans,i)
     return vlans
 
-def make_comands(dic: dict):# aca paso loas vlans de 1 bloque entero
+def make_interfaces_whit_velans(pcs: list, vlans: list):
+    comand = ""
+    n_int = 1
+    for name, ip in list:
+        net = IPv4Network(ip, strict=False)
+        vlan = vlans.index(net)
+        comand+=f"Send, int f0/{n_int}"+"{Enter}\n"+"Send, switchport mode access{Enter}\n"+f"switchport access vlan {vlan}"+"{Enter}\n"
+        
+
+def make_comands(dic: dict, pcSwitch: dict):# aca paso loas vlans de 1 bloque entero
     vlans = len(dic)
     comand = ""
     for k, v in dic.items():
@@ -49,6 +58,7 @@ def make_comands(dic: dict):# aca paso loas vlans de 1 bloque entero
                 for i in range(1,vlans):
                     comand+=f"Send, vlan {i}"+"{Enter}\n"
                 comand+="return\n"
+                
     with open("script_ipv6.ahk","a") as ahk:
         ahk.write(comand)
 
@@ -64,17 +74,31 @@ def make_secmentos(dic: dict):
     with open("segmentos_ipv6.txt", "w" ) as segm:
         segm.write(comand)
             
-
+def pc_switch(block: list, switches: dict):
+    actual_switch = ""
+    for name, ip in block:
+        if str(name).startswith("sw") or str(name).startswith("SW"):
+            switches[name] = []
+            actual_switch = name
+        else:
+            switches[actual_switch].append([name, ip])
+        
 
 
 
 
 blocks = bloque()
+pcSwitch = {}
 vlans_g = {}
 for k, v in blocks.items():
     print(f"{k} = {v}")
     print("######################################")
     vlans_g[k] = segmentos(v)
+    pc_switch(v,pcSwitch)
+    
+for k, v in pcSwitch.items():
+    print(f"{k} = {v}")
+    print("||||||||||||||||||||||||||||||||||||")
 
 for k, v in vlans_g.items():
     print(f"{k}, {v}")
