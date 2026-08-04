@@ -63,6 +63,7 @@ def make_comands(dic: dict, pcSwitch: dict):# aca paso loas vlans de 1 bloque en
                     comand+=f"Send, vlan {i}"+"{Enter}\n"
                 pcs = pcSwitch[name]
                 comand+=make_interfaces_whit_velans(pcs, n_vlans)
+                comand+="Send, int f0/24{Enter}\nSend, switchport mode trunk{Enter}\nSend, exit{Enter}\nSend, int f0/23{Enter}\nSend, switchport mode trunk{Enter}\nSend, exit{Enter}\nSend, int g0/1{Enter}\nSend, switch mode trunk{Enter}\nSend, exit{Enter}\n"
                 comand+="return\n"
                 
     with open("script_ipv6.ahk","a") as ahk:

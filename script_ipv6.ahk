@@ -25,6 +25,15 @@ Send, int f0/4{Enter}
 Send, switchport mode access{Enter}
 Send, switchport access vlan 4{Enter}
 Send, exit{Enter}
+Send, int f0/24{Enter}
+Send, switchport mode trunk{Enter}
+Send, exit{Enter}
+Send, int f0/23{Enter}
+Send, switchport mode trunk{Enter}
+Send, exit{Enter}
+Send, int g0/1{Enter}
+Send, switch mode trunk{Enter}
+Send, exit{Enter}
 return
 ::SW2::
 Send, enable{Enter}
@@ -52,6 +61,15 @@ Send, exit{Enter}
 Send, int f0/4{Enter}
 Send, switchport mode access{Enter}
 Send, switchport access vlan 6{Enter}
+Send, exit{Enter}
+Send, int f0/24{Enter}
+Send, switchport mode trunk{Enter}
+Send, exit{Enter}
+Send, int f0/23{Enter}
+Send, switchport mode trunk{Enter}
+Send, exit{Enter}
+Send, int g0/1{Enter}
+Send, switch mode trunk{Enter}
 Send, exit{Enter}
 return
 ::SW3::
@@ -81,6 +99,15 @@ Send, int f0/4{Enter}
 Send, switchport mode access{Enter}
 Send, switchport access vlan 1{Enter}
 Send, exit{Enter}
+Send, int f0/24{Enter}
+Send, switchport mode trunk{Enter}
+Send, exit{Enter}
+Send, int f0/23{Enter}
+Send, switchport mode trunk{Enter}
+Send, exit{Enter}
+Send, int g0/1{Enter}
+Send, switch mode trunk{Enter}
+Send, exit{Enter}
 return
 ::SW4_::
 Send, enable{Enter}
@@ -108,6 +135,15 @@ Send, exit{Enter}
 Send, int f0/4{Enter}
 Send, switchport mode access{Enter}
 Send, switchport access vlan 8{Enter}
+Send, exit{Enter}
+Send, int f0/24{Enter}
+Send, switchport mode trunk{Enter}
+Send, exit{Enter}
+Send, int f0/23{Enter}
+Send, switchport mode trunk{Enter}
+Send, exit{Enter}
+Send, int g0/1{Enter}
+Send, switch mode trunk{Enter}
 Send, exit{Enter}
 return
 ::PC1::
